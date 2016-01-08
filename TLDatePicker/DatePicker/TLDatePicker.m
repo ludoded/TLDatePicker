@@ -11,21 +11,14 @@
 
 @interface TLDatePicker () <FSCalendarDataSource, FSCalendarDelegate, FSCalendarDelegateAppearance, UIPickerViewDelegate, UIPickerViewDataSource>
 
-@property (strong, nonatomic) NSDate *startDate;
-@property (strong, nonatomic) NSDate *endDate;
+@property (strong, nonatomic) NSDate *date;
 @property (strong, nonatomic) UIView *superView;
 @property (strong, nonatomic) FSCalendar *calendar;
 @property (strong, nonatomic) UIPickerView *pickerView;
-@property (strong, nonatomic) UILabel *startDateLabel;
-@property (strong, nonatomic) UILabel *endDateLabel;
+@property (strong, nonatomic) UILabel *dateLabel;
 @property (strong, nonatomic) UIButton *cancelButton;
 @property (strong, nonatomic) UIButton *doneButton;
-@property (strong, nonatomic) UIButton *redoButton;
-@property (strong, nonatomic) TLDatePickerTime *startTime;
-@property (strong, nonatomic) TLDatePickerTime *endTime;
-
-@property (strong, nonatomic) NSDate *currentDate;
-@property (nonatomic) TLCurrentDate currentDateType;
+@property (strong, nonatomic) TLDatePickerTime *time;
 
 @end
 
@@ -91,8 +84,7 @@
     [self layoutIfNeeded];
     
     // Init startTime and endTime
-    self.startTime = [[TLDatePickerTime alloc] init];
-    self.endTime = [[TLDatePickerTime alloc] init];
+    self.time = [[TLDatePickerTime alloc] init];
     
     // Adding Calendar View
     CGSize selfSize = self.bounds.size;
@@ -101,57 +93,48 @@
     UIFont *font = [UIFont systemFontOfSize:10];
     UIFont *boldFont = [UIFont boldSystemFontOfSize:10];
     
-    self.calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(0, ninthHeight, self.frame.size.width, self.frame.size.height * 1 / 3)];
+    self.calendar = [[FSCalendar alloc] initWithFrame:CGRectMake(0, ninthHeight, self.frame.size.width, self.frame.size.height / 3)];
     self.calendar.delegate = self;
     self.calendar.dataSource = self;
-    self.calendar.allowsMultipleSelection = YES;
+    self.calendar.allowsMultipleSelection = NO;
     self.calendar.appearance.todayColor = [UIColor clearColor];
     self.calendar.appearance.titleTodayColor = [UIColor blackColor];
     
     [self addSubview:self.calendar];
     
     // Adding informative labels
-    UILabel *startDateInfo = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, quarterWidth / 2, ninthHeight)];
-    startDateInfo.textAlignment = NSTextAlignmentRight;
-    startDateInfo.text = @"Start:";
-    startDateInfo.font = boldFont;
-    startDateInfo.minimumScaleFactor = 0.5;
-    [self addSubview:startDateInfo];
+    UILabel *dateInfo = [[UILabel alloc] initWithFrame:CGRectMake(ninthHeight, 0, quarterWidth / 2, ninthHeight)];
+    dateInfo.textAlignment = NSTextAlignmentLeft;
+    dateInfo.text = @"Date";
+    dateInfo.font = boldFont;
+    dateInfo.minimumScaleFactor = 0.5;
+    [self addSubview:dateInfo];
     
-    self.startDateLabel = [[UILabel alloc] initWithFrame:CGRectMake(quarterWidth / 2, 0, quarterWidth * 2, ninthHeight)];
-    self.startDateLabel.textAlignment = NSTextAlignmentLeft;
-    self.startDateLabel.font = font;
-    self.startDateLabel.minimumScaleFactor = 0.5;
-    [self addSubview:self.startDateLabel];
+    UILabel *hourInfo = [[UILabel alloc] initWithFrame:CGRectMake(ninthHeight, ninthHeight * 4, quarterWidth / 2, ninthHeight)];
+    hourInfo.textAlignment = NSTextAlignmentCenter;
+    hourInfo.text = @"Hour";
+    hourInfo.font = boldFont;
+    hourInfo.minimumScaleFactor = 0.5;
+    [self addSubview:hourInfo];
     
-    UILabel *endDateInfo = [[UILabel alloc] initWithFrame:CGRectMake(quarterWidth * 2, 0, quarterWidth / 2, ninthHeight)];
-    endDateInfo.textAlignment = NSTextAlignmentRight;
-    endDateInfo.text = @"End:";
-    endDateInfo.font = boldFont;
-    endDateInfo.minimumScaleFactor = 0.5;
-    [self addSubview:endDateInfo];
+    self.dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(quarterWidth / 2 + ninthHeight, 0, selfSize.width - quarterWidth - 2 * ninthHeight, ninthHeight)];
+    self.dateLabel.textAlignment = NSTextAlignmentCenter;
+    self.dateLabel.textColor = [UIColor darkGrayColor];
+    self.dateLabel.font = font;
+    self.dateLabel.minimumScaleFactor = 0.5;
+    [self addSubview:self.dateLabel];
     
-    self.endDateLabel = [[UILabel alloc] initWithFrame:CGRectMake(quarterWidth * 2.5, 0, quarterWidth * 2, ninthHeight)];
-    self.endDateLabel.textAlignment = NSTextAlignmentLeft;
-    self.endDateLabel.font = font;
-    self.endDateLabel.minimumScaleFactor = 0.5;
-    [self addSubview:self.endDateLabel];
-    
-    [self updateDateLabels];
+    [self updateDateLabel];
     
     // Adding action buttons
-    self.cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, ninthHeight * 8, ninthHeight, ninthHeight)];
-    [self.cancelButton setBackgroundImage:[UIImage imageNamed:@"Cancel"] forState:UIControlStateNormal];
-    [self.cancelButton.imageView setContentMode: UIViewContentModeScaleAspectFit];
+    UIImageView *backImg = [[UIImageView alloc] initWithFrame:CGRectMake(ninthHeight / 4, ninthHeight / 4, ninthHeight / 2, ninthHeight / 2)];
+    backImg.image = [UIImage imageNamed:@"Back"];
+    backImg.contentMode = UIViewContentModeScaleAspectFit;
+    [self addSubview:backImg];
+    
+    self.cancelButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, ninthHeight, ninthHeight)];
     [self.cancelButton addTarget:self action:@selector(cancel) forControlEvents:UIControlEventTouchUpInside];
     [self addSubview:self.cancelButton];
-    
-    self.redoButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, ninthHeight, ninthHeight)];
-    self.redoButton.center = CGPointMake(quarterWidth * 2, ninthHeight * 8.5);
-    [self.redoButton setBackgroundImage:[UIImage imageNamed:@"Redo"] forState:UIControlStateNormal];
-    [self.redoButton.imageView setContentMode: UIViewContentModeScaleAspectFit];
-    [self.redoButton addTarget:self action:@selector(redo) forControlEvents:UIControlEventTouchUpInside];
-    [self addSubview:self.redoButton];
     
     self.doneButton = [[UIButton alloc] initWithFrame:CGRectMake(self.bounds.size.width - ninthHeight, ninthHeight * 8, ninthHeight, ninthHeight)];
     [self.doneButton setImage:[UIImage imageNamed:@"Checkmark"] forState:UIControlStateNormal];
@@ -159,10 +142,10 @@
     [self addSubview:self.doneButton];
     
     // Adding Picker View
-    self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, ninthHeight * 4, self.frame.size.width, self.frame.size.height * 1 / 3)];
+    self.pickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, ninthHeight * 5, self.frame.size.width, self.frame.size.height / 3)];
     self.pickerView.delegate = self;
     self.pickerView.dataSource = self;
-    [self setCurrentHoursAndMinutesForDateType:TLCurrentDateStart];
+    [self setCurrentHoursAndMinutesForDateType];
     
     [self addSubview:self.pickerView];
 }
@@ -170,9 +153,8 @@
 /** 
  Method to update info labels
  **/
-- (void)updateDateLabels {
-    [self setDate:self.startDate andTime:self.startTime forLabel:self.startDateLabel];
-    [self setDate:self.endDate andTime:self.endTime forLabel:self.endDateLabel];
+- (void)updateDateLabel {
+    [self setDate:self.date andTime:self.time forLabel:self.dateLabel];
 }
 
 /** 
@@ -191,25 +173,14 @@
 /**
  Method to change the hours and minutes in the selected date
  **/
-- (void)setHours:(int)hours andMinutes:(int)minutes forDateType:(TLCurrentDate)dateType {
-    switch (dateType) {
-        case TLCurrentDateStart:
-            if (self.startDate) {
-                [self setHours:hours andMinutes:minutes forTime:self.startTime];
-            }
-            break;
-            
-        default:
-            if (self.endDate) {
-                [self setHours:hours andMinutes:minutes forTime:self.endTime];
-            }
-            break;
-    }
+- (void)setHours:(int)hours andMinutes:(int)minutes {
+    if (self.date)
+        [self setHours:hours andMinutes:minutes forTime:self.time];
     
-    [self updateDateLabels];
+    [self updateDateLabel];
 }
 
-- (void)setCurrentHoursAndMinutesForDateType:(TLCurrentDate)dateType {
+- (void)setCurrentHoursAndMinutesForDateType {
     unsigned unitFlags = NSCalendarUnitHour | NSCalendarUnitMinute;
     NSCalendar *calendar = [NSCalendar currentCalendar];
     calendar.locale = self.calendar.locale;
@@ -217,7 +188,7 @@
     int hours = (int)comps.hour;
     int minutes = (int)comps.minute;
     
-    [self setHours:hours andMinutes:minutes forDateType:dateType];
+    [self setHours:hours andMinutes:minutes];
     
     // Set current hours in the picker
     [self.pickerView selectRow:hours inComponent:0 animated:YES];
@@ -249,36 +220,22 @@
 }
 
 /**
- Method is called when redo button is pressed
- It reset all the chosen dates
- **/
-- (void)redo {
-    if (self.startDate != nil) {
-        [self.calendar deselectDate:self.startDate];
-        self.startDate = nil;
-    }
-    
-    if (self.endDate != nil) {
-        [self.calendar deselectDate:self.endDate];
-        self.endDate = nil;
-    }
-    
-    [self updateDateLabels];
-}
-
-/**
  Method is called when done button is pressed
  It send dates to delegate method and removes itself
  **/
 - (void)done {
-    if ([self.delegate respondsToSelector:@selector(pickerDidSelectStartDate:)]) {
-        NSDate *date = (self.startDate) ? [self addTime:self.startTime toDate:self.startDate] : nil;
-        [self.delegate performSelector:@selector(pickerDidSelectStartDate:) withObject:date];
-    }
+    NSDate *date = (self.date) ? [self addTime:self.time toDate:self.date] : nil;
     
-    if ([self.delegate respondsToSelector:@selector(pickerDidSelectEndDate:)]) {
-        NSDate *date = (self.endDate) ? [self addTime:self.endTime toDate:self.endDate] : nil;
-        [self.delegate performSelector:@selector(pickerDidSelectEndDate:) withObject:date];
+    switch (self.mode) {
+        case TLDatePickerModeStartDate:
+        if ([self.delegate respondsToSelector:@selector(pickerDidSelectStartDate:)])
+            [self.delegate performSelector:@selector(pickerDidSelectStartDate:) withObject:date];
+        break;
+    
+        default:
+        if ([self.delegate respondsToSelector:@selector(pickerDidSelectEndDate:)])
+            [self.delegate performSelector:@selector(pickerDidSelectEndDate:) withObject:date];
+        break;
     }
     
     [self dismiss];
@@ -314,37 +271,28 @@
 
 - (void)show {
     // Select dates if any
-    if (self.startDate != nil) [self.calendar selectDate:self.startDate];
-    if (self.endDate != nil) [self.calendar selectDate:self.endDate];
-    [self updateDateLabels];
+    if (self.date != nil) [self.calendar selectDate:self.date];
+    [self updateDateLabel];
     
     [UIView animateWithDuration:0.5 animations:^{
         self.alpha = 1.0;
     }];
 }
 
-- (void)setStartDate:(NSDate *)date {
+- (void)setDate:(NSDate *)date {
     if (date != nil) {
         NSDate *zeroDate = [self addTime:[self zeroTime] toDate:date];
-        _startDate = zeroDate;
-        self.currentDateType = TLCurrentDateStart;
-        [self setCurrentHoursAndMinutesForDateType:self.currentDateType];
-        [self updateDateLabels];
+        _date = zeroDate;
+        [self setCurrentHoursAndMinutesForDateType];
+        [self updateDateLabel];
     }
     else
-        _startDate = date;
+        _date = date;
 }
 
-- (void)setEndDate:(NSDate *)date {
-    if (date != nil) {
-        NSDate *zeroDate = [self addTime:[self zeroTime] toDate:date];
-        _endDate = zeroDate;
-        self.currentDateType = TLCurrentDateEnd;
-        [self setCurrentHoursAndMinutesForDateType:self.currentDateType];
-        [self updateDateLabels];
-    }
-    else
-        _endDate = date;
+- (void)setStartDate:(NSDate *)startDate {
+    _startDate = startDate;
+    [self.calendar reloadData];
 }
 
 - (TLDatePickerTime *)zeroTime {
@@ -357,60 +305,22 @@
 
 // MARK: FSCalendar Delegate, DataSource & AppearanceDelegate
 - (void)calendar:(FSCalendar *)calendar didSelectDate:(NSDate *)date {
-    self.currentDate = date;
-    
-    if (self.endDate && self.startDate) {
-        if ([date compare:self.endDate] != NSOrderedDescending) {
-            [calendar deselectDate:self.startDate];
-            self.startDate = date;
-            self.currentDateType = TLCurrentDateStart;
-        }
-        else {
-            [calendar deselectDate:self.endDate];
-            self.endDate = date;
-            self.currentDateType = TLCurrentDateEnd;
-        }
-    }
-    else if (self.endDate) {
-        if ([date compare:self.endDate] != NSOrderedDescending) {
-            self.startDate = date;
-            self.currentDateType = TLCurrentDateStart;
-        }
-        else {
-            self.startDate = self.endDate;
-            self.endDate = date;
-            self.currentDateType = TLCurrentDateEnd;
-        }
-    }
-    else if (self.startDate) {
-        if ([date compare:self.startDate] != NSOrderedDescending) {
-            self.endDate = self.startDate;
-            self.startDate = date;
-            self.currentDateType = TLCurrentDateStart;
-        }
-        else {
-            self.endDate = date;
-            self.currentDateType = TLCurrentDateEnd;
-        }
-    }
-    else {
-        self.startDate = date;
-        self.currentDateType = TLCurrentDateStart;
-    }
-    
-    [self setCurrentHoursAndMinutesForDateType:self.currentDateType];
+    self.date = date;
+    [self setCurrentHoursAndMinutesForDateType];
     
     // Update labels
-    [self updateDateLabels];
+    [self updateDateLabel];
 }
 
 - (void)calendar:(FSCalendar *)calendar didDeselectDate:(NSDate *)date {
-    if ([date compare:self.startDate] == NSOrderedSame)
-        self.startDate = nil;
-    else
-        self.endDate = nil;
+    if ([date compare:self.date] == NSOrderedSame)
+        self.date = nil;
     
-    [self updateDateLabels];
+    [self updateDateLabel];
+}
+
+- (NSDate *)minimumDateForCalendar:(FSCalendar *)calendar {
+    return (self.startDate) ? self.startDate : [self.calendar dateWithYear:1970 month:1 day:1];;
 }
 
 // MARK: UIPickerView Delegate & DataSource
@@ -427,9 +337,9 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    int hours = [pickerView selectedRowInComponent:(NSInteger)0];
-    int minutes = [pickerView selectedRowInComponent:(NSInteger)1];
-    [self setHours:hours andMinutes:minutes forDateType:self.currentDateType];
+    int hours = (int)[pickerView selectedRowInComponent:0];
+    int minutes = (int)[pickerView selectedRowInComponent:1];
+    [self setHours:hours andMinutes:minutes];
 }
 
 @end

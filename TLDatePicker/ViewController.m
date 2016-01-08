@@ -25,20 +25,27 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)showPicker:(id)sender {
+- (IBAction)showStartPicker:(id)sender {
     TLDatePicker *p = [[TLDatePicker alloc] initWithinView:self.view];
     p.delegate = self;
-    p.endDate = [NSDate date];
-    [p setEndDate:[NSDate date]];
     [p show];
 }
 
 - (void)pickerDidSelectStartDate:(NSDate *)startDate {
+    self.startLabel.text = [NSString stringWithFormat:@"start: %@", startDate];
     NSLog(@"start: %@", startDate);
 }
 
 - (void)pickerDidSelectEndDate:(NSDate *)endDate {
+    self.endLabel.text = [NSString stringWithFormat:@"start: %@", endDate];
     NSLog(@"end: %@", endDate);
 }
 
+- (IBAction)showEndPicker:(id)sender {
+    TLDatePicker *p = [[TLDatePicker alloc] initWithinView:self.view];
+    p.delegate = self;
+    [p setStartDate:[NSDate date]];
+    p.mode = TLDatePickerModeEndDate;
+    [p show];
+}
 @end

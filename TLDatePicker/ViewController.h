@@ -9,8 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UILabel *startLabel;
+@property (weak, nonatomic) IBOutlet UILabel *endLabel;
 
-- (IBAction)showPicker:(id)sender;
+- (IBAction)showStartPicker:(id)sender;
+- (IBAction)showEndPicker:(id)sender;
 
 @end
 

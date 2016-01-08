@@ -7,13 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-typedef NS_ENUM(NSInteger, TLCurrentDate) {
-    TLCurrentDateStart,
-    TLCurrentDateEnd
-};
 
 typedef NS_ENUM(NSInteger, TLDatePickerMode) {
-    TLDatePickerModeStandard,
+    TLDatePickerModeStartDate,
     TLDatePickerModeEndDate
 };
 
@@ -28,12 +24,12 @@ typedef NS_ENUM(NSInteger, TLDatePickerMode) {
 @interface TLDatePicker : UIView
 
 @property (strong, nonatomic) id<TLDatePickerDelegate> delegate;
+@property (strong, nonatomic) NSDate *startDate;
 @property (nonatomic) TLDatePickerMode mode;
 
 - (instancetype)initWithinView:(UIView *)view;
 
-- (void)setStartDate:(NSDate *)date;
-- (void)setEndDate:(NSDate *)date;
+- (void)setDate:(NSDate *)date;
 
 - (void)show;
 

@@ -16,9 +16,8 @@
 		630699EE1C3EA7D7001B6F28 /* TLDatePickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 630699ED1C3EA7D7001B6F28 /* TLDatePickerTests.m */; };
 		630699F91C3EA7D7001B6F28 /* TLDatePickerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 630699F81C3EA7D7001B6F28 /* TLDatePickerUITests.m */; };
 		637F23169948AAEB168AE3A7 /* libPods-TLDatePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF757C871671CF4A28F54D0 /* libPods-TLDatePicker.a */; };
-		638EBA7F1C3ED9840047FFCE /* Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 638EBA7D1C3ED9840047FFCE /* Cancel.png */; };
 		638EBA801C3ED9840047FFCE /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 638EBA7E1C3ED9840047FFCE /* Checkmark.png */; };
-		638EBA821C3EED690047FFCE /* Redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 638EBA811C3EED690047FFCE /* Redo.png */; };
+		638EBA841C403FFE0047FFCE /* Back.png in Resources */ = {isa = PBXBuildFile; fileRef = 638EBA831C403FFE0047FFCE /* Back.png */; };
 		63B2849C1C3EA9C50096C2B3 /* TLDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2849B1C3EA9C50096C2B3 /* TLDatePicker.m */; };
 		63B2849D1C3EA9C50096C2B3 /* TLDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2849B1C3EA9C50096C2B3 /* TLDatePicker.m */; };
 /* End PBXBuildFile section */
@@ -59,9 +58,8 @@
 		630699F41C3EA7D7001B6F28 /* TLDatePickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TLDatePickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		630699F81C3EA7D7001B6F28 /* TLDatePickerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLDatePickerUITests.m; sourceTree = "<group>"; };
 		630699FA1C3EA7D7001B6F28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		638EBA7D1C3ED9840047FFCE /* Cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cancel.png; path = DatePicker/Resources/Cancel.png; sourceTree = "<group>"; };
 		638EBA7E1C3ED9840047FFCE /* Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Checkmark.png; path = DatePicker/Resources/Checkmark.png; sourceTree = "<group>"; };
-		638EBA811C3EED690047FFCE /* Redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Redo.png; path = DatePicker/Resources/Redo.png; sourceTree = "<group>"; };
+		638EBA831C403FFE0047FFCE /* Back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Back.png; path = DatePicker/Resources/Back.png; sourceTree = "<group>"; };
 		63B2849A1C3EA9C50096C2B3 /* TLDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLDatePicker.h; path = DatePicker/TLDatePicker.h; sourceTree = "<group>"; };
 		63B2849B1C3EA9C50096C2B3 /* TLDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLDatePicker.m; path = DatePicker/TLDatePicker.m; sourceTree = "<group>"; };
 		EBF757C871671CF4A28F54D0 /* libPods-TLDatePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TLDatePicker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,8 +169,7 @@
 		638EBA7C1C3ED92F0047FFCE /* Recources */ = {
 			isa = PBXGroup;
 			children = (
-				638EBA811C3EED690047FFCE /* Redo.png */,
-				638EBA7D1C3ED9840047FFCE /* Cancel.png */,
+				638EBA831C403FFE0047FFCE /* Back.png */,
 				638EBA7E1C3ED9840047FFCE /* Checkmark.png */,
 			);
 			name = Recources;
@@ -302,10 +299,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				630699E31C3EA7D7001B6F28 /* LaunchScreen.storyboard in Resources */,
+				638EBA841C403FFE0047FFCE /* Back.png in Resources */,
 				630699E01C3EA7D7001B6F28 /* Assets.xcassets in Resources */,
 				630699DE1C3EA7D7001B6F28 /* Main.storyboard in Resources */,
-				638EBA821C3EED690047FFCE /* Redo.png in Resources */,
-				638EBA7F1C3ED9840047FFCE /* Cancel.png in Resources */,
 				638EBA801C3ED9840047FFCE /* Checkmark.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -526,6 +522,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TLDatePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ayk.TLDatePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -538,6 +535,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TLDatePicker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Ayk.TLDatePicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
