@@ -214,8 +214,8 @@
     NSCalendar *calendar = [NSCalendar currentCalendar];
     calendar.locale = self.calendar.locale;
     NSDateComponents *comps = [calendar components:unitFlags fromDate:[NSDate date]];
-    int hours = comps.hour;
-    int minutes = comps.minute;
+    int hours = (int)comps.hour;
+    int minutes = (int)comps.minute;
     
     [self setHours:hours andMinutes:minutes forDateType:dateType];
     
@@ -423,12 +423,12 @@
 }
 
 - (nullable NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [NSString stringWithFormat:@"%02d", row];
+    return [NSString stringWithFormat:@"%02d", (int)row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    int hours = [pickerView selectedRowInComponent:0];
-    int minutes = [pickerView selectedRowInComponent:1];
+    int hours = [pickerView selectedRowInComponent:(NSInteger)0];
+    int minutes = [pickerView selectedRowInComponent:(NSInteger)1];
     [self setHours:hours andMinutes:minutes forDateType:self.currentDateType];
 }
 
