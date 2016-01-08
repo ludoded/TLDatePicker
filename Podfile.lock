@@ -1,0 +1,10 @@
+PODS:
+  - FSCalendar (1.7.2)
+
+DEPENDENCIES:
+  - FSCalendar
+
+SPEC CHECKSUMS:
+  FSCalendar: 38f5b3de1aeaa7dc03a3e997bdc6fb3ff3a88b8d
+
+COCOAPODS: 0.39.0

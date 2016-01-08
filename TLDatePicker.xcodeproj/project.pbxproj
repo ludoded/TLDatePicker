@@ -1,0 +1,637 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		630699D51C3EA7D7001B6F28 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 630699D41C3EA7D7001B6F28 /* main.m */; };
+		630699D81C3EA7D7001B6F28 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 630699D71C3EA7D7001B6F28 /* AppDelegate.m */; };
+		630699DB1C3EA7D7001B6F28 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 630699DA1C3EA7D7001B6F28 /* ViewController.m */; };
+		630699DE1C3EA7D7001B6F28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630699DC1C3EA7D7001B6F28 /* Main.storyboard */; };
+		630699E01C3EA7D7001B6F28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 630699DF1C3EA7D7001B6F28 /* Assets.xcassets */; };
+		630699E31C3EA7D7001B6F28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 630699E11C3EA7D7001B6F28 /* LaunchScreen.storyboard */; };
+		630699EE1C3EA7D7001B6F28 /* TLDatePickerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 630699ED1C3EA7D7001B6F28 /* TLDatePickerTests.m */; };
+		630699F91C3EA7D7001B6F28 /* TLDatePickerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 630699F81C3EA7D7001B6F28 /* TLDatePickerUITests.m */; };
+		637F23169948AAEB168AE3A7 /* libPods-TLDatePicker.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF757C871671CF4A28F54D0 /* libPods-TLDatePicker.a */; };
+		638EBA7F1C3ED9840047FFCE /* Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 638EBA7D1C3ED9840047FFCE /* Cancel.png */; };
+		638EBA801C3ED9840047FFCE /* Checkmark.png in Resources */ = {isa = PBXBuildFile; fileRef = 638EBA7E1C3ED9840047FFCE /* Checkmark.png */; };
+		638EBA821C3EED690047FFCE /* Redo.png in Resources */ = {isa = PBXBuildFile; fileRef = 638EBA811C3EED690047FFCE /* Redo.png */; };
+		63B2849C1C3EA9C50096C2B3 /* TLDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2849B1C3EA9C50096C2B3 /* TLDatePicker.m */; };
+		63B2849D1C3EA9C50096C2B3 /* TLDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 63B2849B1C3EA9C50096C2B3 /* TLDatePicker.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		630699EA1C3EA7D7001B6F28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 630699C81C3EA7D7001B6F28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 630699CF1C3EA7D7001B6F28;
+			remoteInfo = TLDatePicker;
+		};
+		630699F51C3EA7D7001B6F28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 630699C81C3EA7D7001B6F28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 630699CF1C3EA7D7001B6F28;
+			remoteInfo = TLDatePicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		10E13AB0B635433BDC20E05A /* Pods-TLDatePicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLDatePicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-TLDatePicker/Pods-TLDatePicker.release.xcconfig"; sourceTree = "<group>"; };
+		16D848934BC772F56F659D99 /* Pods-TLDatePicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TLDatePicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TLDatePicker/Pods-TLDatePicker.debug.xcconfig"; sourceTree = "<group>"; };
+		630699D01C3EA7D7001B6F28 /* TLDatePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TLDatePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		630699D41C3EA7D7001B6F28 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		630699D61C3EA7D7001B6F28 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		630699D71C3EA7D7001B6F28 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		630699D91C3EA7D7001B6F28 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		630699DA1C3EA7D7001B6F28 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		630699DD1C3EA7D7001B6F28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		630699DF1C3EA7D7001B6F28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		630699E21C3EA7D7001B6F28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		630699E41C3EA7D7001B6F28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		630699E91C3EA7D7001B6F28 /* TLDatePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TLDatePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		630699ED1C3EA7D7001B6F28 /* TLDatePickerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLDatePickerTests.m; sourceTree = "<group>"; };
+		630699EF1C3EA7D7001B6F28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		630699F41C3EA7D7001B6F28 /* TLDatePickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TLDatePickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		630699F81C3EA7D7001B6F28 /* TLDatePickerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TLDatePickerUITests.m; sourceTree = "<group>"; };
+		630699FA1C3EA7D7001B6F28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		638EBA7D1C3ED9840047FFCE /* Cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cancel.png; path = DatePicker/Resources/Cancel.png; sourceTree = "<group>"; };
+		638EBA7E1C3ED9840047FFCE /* Checkmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Checkmark.png; path = DatePicker/Resources/Checkmark.png; sourceTree = "<group>"; };
+		638EBA811C3EED690047FFCE /* Redo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Redo.png; path = DatePicker/Resources/Redo.png; sourceTree = "<group>"; };
+		63B2849A1C3EA9C50096C2B3 /* TLDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TLDatePicker.h; path = DatePicker/TLDatePicker.h; sourceTree = "<group>"; };
+		63B2849B1C3EA9C50096C2B3 /* TLDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TLDatePicker.m; path = DatePicker/TLDatePicker.m; sourceTree = "<group>"; };
+		EBF757C871671CF4A28F54D0 /* libPods-TLDatePicker.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TLDatePicker.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		630699CD1C3EA7D7001B6F28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				637F23169948AAEB168AE3A7 /* libPods-TLDatePicker.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630699E61C3EA7D7001B6F28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630699F11C3EA7D7001B6F28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		630699C71C3EA7D7001B6F28 = {
+			isa = PBXGroup;
+			children = (
+				630699D21C3EA7D7001B6F28 /* TLDatePicker */,
+				630699EC1C3EA7D7001B6F28 /* TLDatePickerTests */,
+				630699F71C3EA7D7001B6F28 /* TLDatePickerUITests */,
+				630699D11C3EA7D7001B6F28 /* Products */,
+				B8A114CA7F11E720745D913C /* Pods */,
+				A56CCE29CA155CE7ECC8ACC3 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		630699D11C3EA7D7001B6F28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				630699D01C3EA7D7001B6F28 /* TLDatePicker.app */,
+				630699E91C3EA7D7001B6F28 /* TLDatePickerTests.xctest */,
+				630699F41C3EA7D7001B6F28 /* TLDatePickerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		630699D21C3EA7D7001B6F28 /* TLDatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				63069A061C3EA86C001B6F28 /* DatePicker */,
+				630699D61C3EA7D7001B6F28 /* AppDelegate.h */,
+				630699D71C3EA7D7001B6F28 /* AppDelegate.m */,
+				630699D91C3EA7D7001B6F28 /* ViewController.h */,
+				630699DA1C3EA7D7001B6F28 /* ViewController.m */,
+				630699DC1C3EA7D7001B6F28 /* Main.storyboard */,
+				630699DF1C3EA7D7001B6F28 /* Assets.xcassets */,
+				630699E11C3EA7D7001B6F28 /* LaunchScreen.storyboard */,
+				630699E41C3EA7D7001B6F28 /* Info.plist */,
+				630699D31C3EA7D7001B6F28 /* Supporting Files */,
+			);
+			path = TLDatePicker;
+			sourceTree = "<group>";
+		};
+		630699D31C3EA7D7001B6F28 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				630699D41C3EA7D7001B6F28 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		630699EC1C3EA7D7001B6F28 /* TLDatePickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				630699ED1C3EA7D7001B6F28 /* TLDatePickerTests.m */,
+				630699EF1C3EA7D7001B6F28 /* Info.plist */,
+			);
+			path = TLDatePickerTests;
+			sourceTree = "<group>";
+		};
+		630699F71C3EA7D7001B6F28 /* TLDatePickerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				630699F81C3EA7D7001B6F28 /* TLDatePickerUITests.m */,
+				630699FA1C3EA7D7001B6F28 /* Info.plist */,
+			);
+			path = TLDatePickerUITests;
+			sourceTree = "<group>";
+		};
+		63069A061C3EA86C001B6F28 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				638EBA7C1C3ED92F0047FFCE /* Recources */,
+				63B2849A1C3EA9C50096C2B3 /* TLDatePicker.h */,
+				63B2849B1C3EA9C50096C2B3 /* TLDatePicker.m */,
+			);
+			name = DatePicker;
+			sourceTree = "<group>";
+		};
+		638EBA7C1C3ED92F0047FFCE /* Recources */ = {
+			isa = PBXGroup;
+			children = (
+				638EBA811C3EED690047FFCE /* Redo.png */,
+				638EBA7D1C3ED9840047FFCE /* Cancel.png */,
+				638EBA7E1C3ED9840047FFCE /* Checkmark.png */,
+			);
+			name = Recources;
+			sourceTree = "<group>";
+		};
+		A56CCE29CA155CE7ECC8ACC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EBF757C871671CF4A28F54D0 /* libPods-TLDatePicker.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B8A114CA7F11E720745D913C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				16D848934BC772F56F659D99 /* Pods-TLDatePicker.debug.xcconfig */,
+				10E13AB0B635433BDC20E05A /* Pods-TLDatePicker.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		630699CF1C3EA7D7001B6F28 /* TLDatePicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 630699FD1C3EA7D7001B6F28 /* Build configuration list for PBXNativeTarget "TLDatePicker" */;
+			buildPhases = (
+				251D9AD3C3329E8F3E634BF8 /* Check Pods Manifest.lock */,
+				630699CC1C3EA7D7001B6F28 /* Sources */,
+				630699CD1C3EA7D7001B6F28 /* Frameworks */,
+				630699CE1C3EA7D7001B6F28 /* Resources */,
+				9336601B0C369C460EFD4694 /* Embed Pods Frameworks */,
+				6AE3164131D186CD8942F0DF /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TLDatePicker;
+			productName = TLDatePicker;
+			productReference = 630699D01C3EA7D7001B6F28 /* TLDatePicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		630699E81C3EA7D7001B6F28 /* TLDatePickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63069A001C3EA7D7001B6F28 /* Build configuration list for PBXNativeTarget "TLDatePickerTests" */;
+			buildPhases = (
+				630699E51C3EA7D7001B6F28 /* Sources */,
+				630699E61C3EA7D7001B6F28 /* Frameworks */,
+				630699E71C3EA7D7001B6F28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				630699EB1C3EA7D7001B6F28 /* PBXTargetDependency */,
+			);
+			name = TLDatePickerTests;
+			productName = TLDatePickerTests;
+			productReference = 630699E91C3EA7D7001B6F28 /* TLDatePickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		630699F31C3EA7D7001B6F28 /* TLDatePickerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63069A031C3EA7D7001B6F28 /* Build configuration list for PBXNativeTarget "TLDatePickerUITests" */;
+			buildPhases = (
+				630699F01C3EA7D7001B6F28 /* Sources */,
+				630699F11C3EA7D7001B6F28 /* Frameworks */,
+				630699F21C3EA7D7001B6F28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				630699F61C3EA7D7001B6F28 /* PBXTargetDependency */,
+			);
+			name = TLDatePickerUITests;
+			productName = TLDatePickerUITests;
+			productReference = 630699F41C3EA7D7001B6F28 /* TLDatePickerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		630699C81C3EA7D7001B6F28 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = Ayk;
+				TargetAttributes = {
+					630699CF1C3EA7D7001B6F28 = {
+						CreatedOnToolsVersion = 7.2;
+					};
+					630699E81C3EA7D7001B6F28 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 630699CF1C3EA7D7001B6F28;
+					};
+					630699F31C3EA7D7001B6F28 = {
+						CreatedOnToolsVersion = 7.2;
+						TestTargetID = 630699CF1C3EA7D7001B6F28;
+					};
+				};
+			};
+			buildConfigurationList = 630699CB1C3EA7D7001B6F28 /* Build configuration list for PBXProject "TLDatePicker" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 630699C71C3EA7D7001B6F28;
+			productRefGroup = 630699D11C3EA7D7001B6F28 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				630699CF1C3EA7D7001B6F28 /* TLDatePicker */,
+				630699E81C3EA7D7001B6F28 /* TLDatePickerTests */,
+				630699F31C3EA7D7001B6F28 /* TLDatePickerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		630699CE1C3EA7D7001B6F28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630699E31C3EA7D7001B6F28 /* LaunchScreen.storyboard in Resources */,
+				630699E01C3EA7D7001B6F28 /* Assets.xcassets in Resources */,
+				630699DE1C3EA7D7001B6F28 /* Main.storyboard in Resources */,
+				638EBA821C3EED690047FFCE /* Redo.png in Resources */,
+				638EBA7F1C3ED9840047FFCE /* Cancel.png in Resources */,
+				638EBA801C3ED9840047FFCE /* Checkmark.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630699E71C3EA7D7001B6F28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630699F21C3EA7D7001B6F28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		251D9AD3C3329E8F3E634BF8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		6AE3164131D186CD8942F0DF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TLDatePicker/Pods-TLDatePicker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9336601B0C369C460EFD4694 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TLDatePicker/Pods-TLDatePicker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		630699CC1C3EA7D7001B6F28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630699DB1C3EA7D7001B6F28 /* ViewController.m in Sources */,
+				63B2849C1C3EA9C50096C2B3 /* TLDatePicker.m in Sources */,
+				630699D81C3EA7D7001B6F28 /* AppDelegate.m in Sources */,
+				630699D51C3EA7D7001B6F28 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630699E51C3EA7D7001B6F28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630699EE1C3EA7D7001B6F28 /* TLDatePickerTests.m in Sources */,
+				63B2849D1C3EA9C50096C2B3 /* TLDatePicker.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		630699F01C3EA7D7001B6F28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				630699F91C3EA7D7001B6F28 /* TLDatePickerUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		630699EB1C3EA7D7001B6F28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 630699CF1C3EA7D7001B6F28 /* TLDatePicker */;
+			targetProxy = 630699EA1C3EA7D7001B6F28 /* PBXContainerItemProxy */;
+		};
+		630699F61C3EA7D7001B6F28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 630699CF1C3EA7D7001B6F28 /* TLDatePicker */;
+			targetProxy = 630699F51C3EA7D7001B6F28 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		630699DC1C3EA7D7001B6F28 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				630699DD1C3EA7D7001B6F28 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		630699E11C3EA7D7001B6F28 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				630699E21C3EA7D7001B6F28 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		630699FB1C3EA7D7001B6F28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		630699FC1C3EA7D7001B6F28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		630699FE1C3EA7D7001B6F28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 16D848934BC772F56F659D99 /* Pods-TLDatePicker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TLDatePicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Ayk.TLDatePicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		630699FF1C3EA7D7001B6F28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10E13AB0B635433BDC20E05A /* Pods-TLDatePicker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TLDatePicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Ayk.TLDatePicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		63069A011C3EA7D7001B6F28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TLDatePickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Ayk.TLDatePickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TLDatePicker.app/TLDatePicker";
+			};
+			name = Debug;
+		};
+		63069A021C3EA7D7001B6F28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TLDatePickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Ayk.TLDatePickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TLDatePicker.app/TLDatePicker";
+			};
+			name = Release;
+		};
+		63069A041C3EA7D7001B6F28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TLDatePickerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Ayk.TLDatePickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TLDatePicker;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		63069A051C3EA7D7001B6F28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TLDatePickerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = Ayk.TLDatePickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TLDatePicker;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		630699CB1C3EA7D7001B6F28 /* Build configuration list for PBXProject "TLDatePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				630699FB1C3EA7D7001B6F28 /* Debug */,
+				630699FC1C3EA7D7001B6F28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		630699FD1C3EA7D7001B6F28 /* Build configuration list for PBXNativeTarget "TLDatePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				630699FE1C3EA7D7001B6F28 /* Debug */,
+				630699FF1C3EA7D7001B6F28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63069A001C3EA7D7001B6F28 /* Build configuration list for PBXNativeTarget "TLDatePickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63069A011C3EA7D7001B6F28 /* Debug */,
+				63069A021C3EA7D7001B6F28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63069A031C3EA7D7001B6F28 /* Build configuration list for PBXNativeTarget "TLDatePickerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63069A041C3EA7D7001B6F28 /* Debug */,
+				63069A051C3EA7D7001B6F28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 630699C81C3EA7D7001B6F28 /* Project object */;
+}
